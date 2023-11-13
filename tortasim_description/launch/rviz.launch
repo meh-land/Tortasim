@@ -2,7 +2,7 @@
 
 <launch>
 
-    <param name='robot_description' command="$(find xacro)/xacro '$(find hellobot_specs)/urdf/hellobot.xacro'"/>
+    <param name='robot_description' command="$(find xacro)/xacro '$(find tortasim_description)/urdf/tortabot.xacro'"/>
     
     <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
         <!-- <param name="use_gui" value='False'/> -->
