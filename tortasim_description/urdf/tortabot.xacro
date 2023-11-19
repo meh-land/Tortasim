@@ -235,6 +235,39 @@
         <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
       </inertial>
     </link>
+
+    <joint name="scan_joint" type="fixed">
+      <parent link="chassis"/>
+      <child link="base_scan"/>
+      <origin xyz="-0.032 0 0.172" rpy="0 0 0"/>
+    </joint>
+  
+    <link name="base_scan">
+      <visual>
+        <origin xyz="0 0 0.0" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0315" radius="0.055"/>
+        </geometry>
+        <material name="red"/>
+      </visual>
+  
+      <collision>
+        <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.0315" radius="0.055"/>
+        </geometry>
+      </collision>
+  
+      <inertial>
+        <mass value="0.114" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+                 iyy="0.001" iyz="0.0"
+                 izz="0.001" />
+      </inertial>
+    </link>
+  
+  
   
     <joint name="IMU_joint" type="fixed">
       <origin xyz="0 0 0.06" rpy="0 0 0"/>
@@ -242,7 +275,9 @@
       <child link="imu_link"/>
     </joint>
   
-  
+
+
+    
 
   <!-- Hokuyo Laser
   <link name="hokuyo_link">
